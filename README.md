@@ -60,3 +60,11 @@ This is a example of how to deploy multiple ec2 instances using terraform.
         secret_key = var.AWS_SECRET_KEY
     }
     ```
+
+## Terraform Commands
+After terraform configurations done, run the following command.
+- `terraform init`. This command will initializes a working directory and downloads the necessary provider plugins and modules and setting up the backend for storing your infrastructure's state.
+- `terraform fmt`. This command will reformat your configuration in the standard style.
+- `terraform validate`. This command will check whether the configuration is valid.
+- `terraform plan`. This command will show changes required by the current configuration.
+- `terraform appy`. This command will create or update infrastructure.
