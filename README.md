@@ -5,6 +5,7 @@ This is a example of how to deploy multiple ec2 instances using terraform.
 - Make sure you have **AWS Acoount**. *If you don't have AWS Account, you must create one. Open https://aws.amazon.com/ then follow the intructions to create aws account*.
 - Create IAM user and **create `Access Key` and `Secret Access Key`**. *Open https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html to read the docs. Copy your `Access Key` and `Secret Access Key`.*
 - Install terraform. *In this case i use WSL. Read this artical to install terraform in WSL : https://medium.com/@chranga007/how-to-configure-terraform-in-wsl-e9f0c669cda5.*
+- **Create an SSH key pair** on your local system serves as a secure and convenient method for authenticating yourself when connecting to remote servers, such as instances on AWS. Use this command `ssh-keygen -t rsa -b 2048 -f <key name>`
 
 ## Create Terraform Configurations
 ### main.tf
