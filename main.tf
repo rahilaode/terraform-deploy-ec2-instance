@@ -24,9 +24,8 @@ resource "aws_key_pair" "deployer" {
 # Create a security group to control inbound traffic to instances.
 resource "aws_security_group" "network-security-group" {
   name        = var.SECURITY-GROUP-NAME
-  description = "Allow TLS inbound traffic"
+  description = "Allow TLS inbound SSH traffic and all outbound traffic"
 
-  # Allow SSH inbound traffic from any IP address.
   ingress {
     description = "SSH"
     from_port   = 22
@@ -34,6 +33,14 @@ resource "aws_security_group" "network-security-group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   # Add tags for better identification.
   tags = {
     Name = "SG-demo-devops-class"
